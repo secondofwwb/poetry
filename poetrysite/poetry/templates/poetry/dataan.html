@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'poetrycss/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <title>唐诗宋词查询</title>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark navbar-expand-md" style="background-color:#4f3566;" id="firstnav">
+            <a class="navbar-brand mr-md-4" href="../index">唐诗宋词查询</a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item" style="width:80px;">
+                        <a class="nav-link " href="../index">找诗词</a>
+                    </li>
+                    <li class="nav-item" style="width:80px;">
+                        <a class="nav-link active" href="#">数据分析</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <div class="container" style="margin-top:20px;">
+            <div class="row">
+                <div class="col-md">
+                    <canvas id="myChart1" height="300"></canvas>
+                </div>
+                <div class="col-md">
+                    <canvas id="myChart2" height="300"></canvas>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <div class="col-md">
+                    <canvas id="myChart3" height="400"></canvas>
+                </div>
+		<div class="col-md">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="con">
+
+
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="{% static 'poetrycss/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'poetrycss/dataan.js' %}"></script>
+    </body>
+</html>

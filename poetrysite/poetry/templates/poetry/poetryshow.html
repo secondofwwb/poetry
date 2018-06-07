@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'poetrycss/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <title>唐诗宋词查询</title>
+    </head>
+    <body>
+        {% verbatim %}
+        <nav class="navbar sticky-top navbar-dark navbar-expand-md" style="background-color:#4f3566;">
+            <a class="navbar-brand mr-md-4" href="#">唐诗宋词查询</a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item" style="width:80px;">
+                        <a class="nav-link active" href="../../index/">找诗词</a>
+                    </li>
+                    <li class="nav-item" style="width:80px;">
+                        <a class="nav-link" href="../../dataan">数据分析</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline d-flex justify-content-end" style="width: 80%;" id="myform">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="试试查找诗词吧...." name="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" style="background-color:#4f3566;" type="submit" id="searchb">查找</button>
+                    </div>
+                </div>
+            </form>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <div class="container my-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 id="title"></h5>
+                    <span id="author"></span>
+                    <span id="dyna"></span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text" id ="paragraphs"></p>
+                    <p class="card-text" id = "yunlv"></p>
+                    <p class="card-text font-weight-light" >
+                        <h5 style="font-weight:bold;" id = "author_s"></h5>
+                        <p class="card-text" id="intro"></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center">
+            <p class="font-weight-light text-muted">design by second contact wuwenbosecond@163.com</p>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="searchvaild">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">选项中包含特殊字符,或者搜索字数太少</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="dataanmodal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">正在开发中尽情期待。。。。</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endverbatim %}
+
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="{% static 'poetrycss/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'poetrycss/poetryshow.js' %}"></script>
+    </body>
+</html>
